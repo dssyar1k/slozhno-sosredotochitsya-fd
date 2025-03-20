@@ -19,7 +19,7 @@
   --button-hover-color: rgba(50, 49, 45, 0.4);
   --button-focus-color: var(--text-color);
   --background-image: url(../images/cover-image-light.png);
-  --background-color: var(--accent-text-color, #000028);
+  --background-color: #fff1f7;
   --decoration-display: none;
 }
 
@@ -39,7 +39,7 @@
     --button-hover-color: rgba(50, 49, 45, 0.4);
     --button-focus-color: var(--text-color);
     --background-image: url(../images/cover-image-light.png);
-    --background-color: var(--accent-text-color, #000028);
+    --background-color: #fff1f7;
     --decoration-display: none;
   }
 }
