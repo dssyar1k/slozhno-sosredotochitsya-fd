@@ -31,12 +31,12 @@
   border-block-start: 1px solid var(--decorated-border-color);
   inset-block-start: clamp(
     10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
+    calc(10px + (10 * ((100vw - 375px) / (768 - 375)))),
     20px
   );
   inset-inline-end: clamp(
     10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
+    calc(10px + (10 * ((100vw - 375px) / (768 - 375)))),
     20px
   );
   block-size: 24px;
@@ -47,12 +47,12 @@
   border-block-end: 1px solid var(--decorated-border-color);
   inset-block-end: clamp(
     10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
+    calc(10px + (10 * ((100vw - 375px) / (768 - 375)))),
     20px
   );
   inset-inline-start: clamp(
     10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
+    calc(10px + (10 * ((100vw - 375px) / (768 - 375)))),
     20px
   );
   block-size: 25px;
@@ -84,8 +84,8 @@
   position: absolute;
   display: block;
   border-radius: 50%;
-  box-shadow: 0 0 4px 2px #ff0070;
-  background-color: #ff0070;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
   transform: translateY(-50%);
   inset-inline-end: -20px;
   inset-block-start: 50%;
@@ -97,7 +97,7 @@
   justify-items: end;
   margin-block-start: clamp(
     75px,
-    calc(75px + (117 * ((100vw - 375px) / 393))),
+    calc(75px + (117 * ((100vw - 375px) / (768 - 375)))),
     192px
   );
 }
@@ -131,10 +131,7 @@
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  text-decoration: underline;
-  text-underline-offset: 7px;
-  inset-inline-start: 0;
-  color: var(--button-focus-color, #ff0070);
+  border-block-end-color: var(--button-focus-color);
 }
 
 .header__theme-menu-button:hover {
@@ -163,15 +160,19 @@
 }
 
 .header__container {
-  max-width: clamp(355px, calc(355px + (9 * ((100vw - 375px) / 393))), 364px);
+  max-width: clamp(
+    355px,
+    calc(355px + (9 * ((100vw - 375px) / (768 - 375)))),
+    364px
+  );
   margin-block-start: clamp(
     55px,
-    calc(55px + (107 * ((100vw - 375px) / 393))),
+    calc(55px + (107 * ((100vw - 375px) / (768 - 375)))),
     162px
   );
   margin-block-end: clamp(
     66px,
-    calc(66px + (117 * ((100vw - 375px) / 393))),
+    calc(66px + (117 * ((100vw - 375px) / (768 - 375)))),
     183px
   );
 }
@@ -194,9 +195,13 @@
 }
 
 main {
-  padding: clamp(40px, calc(40px + (20 * ((100vw - 375px) / 393))), 60px)
-    clamp(10px, calc(10px + (10 * ((100vw - 375px) / 393))), 20px)
-    clamp(35px, calc(35px + (20 * ((100vw - 375px) / 393))), 60px);
+  padding: clamp(
+      40px,
+      calc(40px + (20 * ((100vw - 375px) / (768 - 375)))),
+      60px
+    )
+    clamp(10px, calc(10px + (10 * ((100vw - 375px) / (768 - 375)))), 20px)
+    clamp(35px, calc(35px + (20 * ((100vw - 375px) / (768 - 375)))), 60px);
 }
 
 .section {
@@ -215,7 +220,7 @@ main {
 .section:not(:last-child) {
   margin-block-end: clamp(
     50px,
-    calc(50px + (30 * ((100vw - 375px) / 393))),
+    calc(50px + (30 * ((100vw - 375px) / (768 - 375)))),
     80px
   );
 }
@@ -293,10 +298,14 @@ main {
 
 .footer {
   position: relative;
-  padding: clamp(286px, calc(286px + (177 * ((100vw - 375px) / 393))), 463px)
-    clamp(14px, calc(14px + (190 * ((100vw - 375px) / 393))), 204px)
-    clamp(285px, calc(285px + (177 * ((100vw - 375px) / 393))), 462px)
-    clamp(13px, calc(13px + (191 * ((100vw - 375px) / 393))), 204px);
+  padding: clamp(
+      286px,
+      calc(286px + (177 * ((100vw - 375px) / (768 - 375)))),
+      463px
+    )
+    clamp(14px, calc(14px + (190 * ((100vw - 375px) / (768 - 375)))), 204px)
+    clamp(285px, calc(285px + (177 * ((100vw - 375px) / (768 - 375)))), 462px)
+    clamp(13px, calc(13px + (191 * ((100vw - 375px) / (768 - 375)))), 204px);
   block-size: 100vh;
   min-block-size: 668px;
 }
@@ -319,17 +328,17 @@ main {
     justify-self: end;
     max-width: clamp(
       364px,
-      calc(364px + (127 * ((100vw - 768px) / 256))),
+      calc(364px + (127 * ((100vw - 768px) / (1024 - 768)))),
       491px
     );
     margin-block-start: clamp(
       114px,
-      calc(162px + ((114 - 162) * ((100vw - 768px) / 256))),
+      calc(162px + ((114 - 162) * ((100vw - 768px) / 1024 - 768))),
       162px
     );
     margin-block-end: clamp(
       134px,
-      calc(183px + ((134 - 183) * ((100vw - 768px) / 256))),
+      calc(183px + ((134 - 183) * ((100vw - 768px) / 1024 - 768))),
       183px
     );
     inline-size: 50%;
@@ -414,10 +423,18 @@ main {
   }
 
   .footer {
-    padding: clamp(319px, calc(463px + (-144 * ((100vw - 768px) / 256))), 463px)
-      clamp(204px, calc(204px + (72 * ((100vw - 768px) / 256))), 276px)
-      clamp(319px, calc(462px + (-143 * ((100vw - 768px) / 256))), 462px)
-      clamp(204px, calc(204px + (73 * ((100vw - 768px) / 256))), 277px);
+    padding: clamp(
+        319px,
+        calc(463px + (-144 * ((100vw - 768px) / (1024 - 768)))),
+        463px
+      )
+      clamp(204px, calc(204px + (72 * ((100vw - 768px) / (1024 - 768)))), 276px)
+      clamp(
+        319px,
+        calc(462px + (-143 * ((100vw - 768px) / (1024 - 768)))),
+        462px
+      )
+      clamp(204px, calc(204px + (73 * ((100vw - 768px) / (1024 - 768)))), 277px);
   }
 }
 
