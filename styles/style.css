@@ -27,8 +27,6 @@
 }
 
 .decorated-zone::before {
-  border-inline-end: 1px solid var(--decorated-border-color);
-  border-block-start: 1px solid var(--decorated-border-color);
   inset-block-start: clamp(
     10px,
     calc(10px + (10 * ((100vw - 375px) / (768 - 375)))),
@@ -39,12 +37,12 @@
     calc(10px + (10 * ((100vw - 375px) / (768 - 375)))),
     20px
   );
+  border-inline-end: 1px solid var(--decorated-border-color);
+  border-block-start: 1px solid var(--decorated-border-color);
   block-size: 24px;
 }
 
 .decorated-zone::after {
-  border-inline-start: 1px solid var(--decorated-border-color);
-  border-block-end: 1px solid var(--decorated-border-color);
   inset-block-end: clamp(
     10px,
     calc(10px + (10 * ((100vw - 375px) / (768 - 375)))),
@@ -55,6 +53,8 @@
     calc(10px + (10 * ((100vw - 375px) / (768 - 375)))),
     20px
   );
+  border-inline-start: 1px solid var(--decorated-border-color);
+  border-block-end: 1px solid var(--decorated-border-color);
   block-size: 25px;
 }
 
@@ -140,6 +140,7 @@
 
 .header__theme-menu-button_active {
   border: 1px solid var(--button-active-color);
+  pointer-events: none;
 }
 
 .header__title {
@@ -253,7 +254,7 @@ main {
   line-height: var(--main-line-height);
 }
 
-.section__text + .section__text {
+.section__text {
   margin-block-start: 10px;
 }
 
@@ -267,11 +268,11 @@ main {
 .section__link:hover::after {
   content: "";
   position: absolute;
-  background-color: currentColor;
   inset-inline-start: 0;
   inset-inline-end: 0;
   inset-block-end: 0;
   block-size: 1px;
+  background-color: currentColor;
 }
 
 .section__link:focus-visible {
@@ -326,11 +327,6 @@ main {
 
   .header__container {
     justify-self: end;
-    max-width: clamp(
-      364px,
-      calc(364px + (127 * ((100vw - 768px) / (1024 - 768)))),
-      491px
-    );
     margin-block-start: clamp(
       114px,
       calc(162px + ((114 - 162) * ((100vw - 768px) / 1024 - 768))),
@@ -341,11 +337,17 @@ main {
       calc(183px + ((134 - 183) * ((100vw - 768px) / 1024 - 768))),
       183px
     );
+    max-width: clamp(
+      364px,
+      calc(364px + (127 * ((100vw - 768px) / (1024 - 768)))),
+      491px
+    );
     inline-size: 50%;
   }
 
   .section {
     display: grid;
+    flex-direction: column;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
