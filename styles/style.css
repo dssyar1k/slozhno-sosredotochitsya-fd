@@ -242,6 +242,10 @@ main {
   line-height: var(--main-line-height);
 }
 
+.section__subtitle_add-margin {
+  margin-block-end: 20px;
+}
+
 .regular {
   font-weight: var(--subtitle-regular);
 }
@@ -315,7 +319,7 @@ main {
 
 @media (width >= 768px) {
   .header {
-    padding: 0 10px 0 0;
+    padding: 0 20px 0 0;
   }
 
   .title {
@@ -324,20 +328,16 @@ main {
 
   .header__container {
     justify-self: end;
+    max-width: clamp(364px, calc(364px + (127 * (100vw - 768px))), 491px);
     margin-block-start: clamp(
       114px,
-      calc(162px + ((114 - 162) * ((100vw - 768px) / 1024 - 768))),
+      calc(162px + ((114 - 162) * (100vw - 768px))),
       162px
     );
     margin-block-end: clamp(
       134px,
-      calc(183px + ((134 - 183) * ((100vw - 768px) / 1024 - 768))),
+      calc(183px + ((134 - 183) * (100vw - 768px))),
       183px
-    );
-    max-width: clamp(
-      364px,
-      calc(364px + (127 * ((100vw - 768px) / (1024 - 768)))),
-      491px
     );
     inline-size: 50%;
   }
